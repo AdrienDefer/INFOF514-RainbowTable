@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1f4a9ac-6c84-4f92-9773-e477616d6a77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/Files/RainbowTables/RainbowTable.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/Files/ResultFiles/ImprovedResultsFile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/HashFiles/HashToCrackFile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/HashFiles/HashToCrackFile2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/UnsortedTables/SortedRainbowTable.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/UnsortedTables/SortedRainbowTable2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/UnsortedTables/UnsortedRainbowTable.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/WNSFiles/NFile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/WNSFiles/SFile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/WNSFiles/TransformWFile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Files/WNSFiles/WFile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Functions/chain_construction.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Functions/rainbow_crack.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Functions/useful_functions.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Headers/buffer_management.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Headers/main.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Headers/pwd_structure.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/SHA256/sha256.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/SHA256/sha256.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/ImprovedRainbowTable/src/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Files/HashFiles/HashToCrackFile10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Files/HashFiles/HashToCrackFile11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Files/HashFiles/HashToCrackFile12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Files/UnsortedTables/UnsortedTable10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Files/UnsortedTables/UnsortedTable12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Functions/chain_construction.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Functions/rainbow_crack.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Functions/useful_functions.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Headers/buffer_management.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Headers/main.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Headers/pwd_structure.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/SHA256/sha256.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/SHA256/sha256.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../INFOF514-RainbowTableSHA256/NormalRainbowTable/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HE2BPolice/untitled104.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDFinalProject/SSDFinalProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/Application.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/SSDPoliceProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/out/production/SSDPoliceProject/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/GUI/LoginPage.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/GUI/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/GUI/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/GUI/Pictures/Police.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/Tools/AccountTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ClientSide/Tools/HashFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/Cryptography/myKey.cert" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/Cryptography/myKeyStore.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/Cryptography/myTrustStore.jts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/AES.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/AESKeys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/AccountTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/HashFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/KeyManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/KeyStorage/KeyStore.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/Log/Application.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/Log/ApplicationLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SSDPoliceProject/src/ServerSide/Tools/Log/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../h2/build.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27h5pGk7MTMxsN8aoCXlXHIrKLo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "cmake.loaded.for.project": "true",
+    "last_opened_file_path": "/Users/adrien/Desktop/INFOF514-RainbowTableSHA1/ImprovedRainbowTable/src",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ImprovedRainbowTable/src" />
+      <recent name="$PROJECT_DIR$/ImprovedRainbowTable/src/Files/WNSFiles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImprovedTable" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/ImprovedRainbowTable/src/Makefile" target="ImprovedTable" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile Target.ImprovedTable" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1f4a9ac-6c84-4f92-9773-e477616d6a77" name="Default Changelist" comment="" />
+      <created>1649759657439</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649759657439</updated>
+      <workItem from="1649759660298" duration="3794000" />
+      <workItem from="1649767763508" duration="42627000" />
+      <workItem from="1649973752615" duration="1974000" />
+      <workItem from="1649976406349" duration="28454000" />
+      <workItem from="1650522725173" duration="3315000" />
+      <workItem from="1650614840959" duration="2403000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
