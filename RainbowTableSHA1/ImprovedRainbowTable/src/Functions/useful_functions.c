@@ -6,6 +6,10 @@
 
 FILE *improved_pwd_file;
 
+/**
+ * @brief Fill a buffer in with set of word generators.
+ * 
+ */
 // SIZE -> [0...398]
 void fill_buffer_w() {
     FILE *file_w = fopen("Files/WNSFiles/WFile.txt", "r");
@@ -25,6 +29,10 @@ void fill_buffer_w() {
     fclose(file_w);
 }
 
+/**
+ * @brief Fill a buffer in with set of word generators with the tranform rule applied.
+ * 
+ */
 // SIZE -> [0...797]
 void fill_transform_buffer_w() {
     FILE *file_transform_w = fopen("Files/WNSFiles/TransformWFile.txt", "r");
@@ -44,6 +52,10 @@ void fill_transform_buffer_w() {
     fclose(file_transform_w);
 }
 
+/**
+ * @brief Fill a buffer in with set of number generators.
+ * 
+ */
 // SIZE -> [0...9999]
 void fill_buffer_n() {
     FILE *file_n = fopen("Files/WNSFiles/NFile.txt", "r");
@@ -63,6 +75,10 @@ void fill_buffer_n() {
     fclose(file_n);
 }
 
+/**
+ * @brief Fill a buffer in with set of special charcters generators.
+ * 
+ */
 // SIZE -> [0...31]
 void fill_buffer_s() {
     FILE *file_s = fopen("Files/WNSFiles/SFile.txt", "r");
@@ -73,6 +89,10 @@ void fill_buffer_s() {
     fclose(file_s);
 }
 
+/**
+ * @brief Create the buffer containing the generators of different types.
+ * 
+ */
 void initialize_buffers() {
     buffer_w = malloc(sizeof(char*) * 399);
     transform_buffer_w = malloc(sizeof(char*) * 798);
@@ -85,6 +105,10 @@ void initialize_buffers() {
     fill_transform_buffer_w();
 }
 
+/**
+ * @brief Free the buffer containing the generators of different types.
+ * 
+ */
 void free_all_buffers() {
     for (int i = 0; i < 399; i++) {free(buffer_w[i]);}
     free(buffer_w);
@@ -95,6 +119,12 @@ void free_all_buffers() {
     free(buffer_s);
 }
 
+/**
+ * @brief Generate the first password respecting the pattern.
+ * 
+ * @param random_index random index that will set the differnt generators
+ * @return char* a password respecting the pattern
+ */
 char* first_pwd_generation(int random_index) {
     char *improved_pwd = (char*) malloc(sizeof(char) * (strlen(buffer_w[random_index % 399]) + 6));
     strcat(strcpy(improved_pwd, buffer_w[random_index % 399]), buffer_n[random_index % 10000]);
@@ -103,6 +133,12 @@ char* first_pwd_generation(int random_index) {
     return improved_pwd;
 }
 
+/**
+ * @brief Create a password from an index.
+ * 
+ * @param index index
+ * @return char* password respecting the pattern
+ */
 char* pwd_from_index(int index) {
     char *improved_pwd = (char*) malloc(sizeof(char) * (strlen(transform_buffer_w[index % 798]) + 6));
     strcat(strcpy(improved_pwd, transform_buffer_w[index % 798]), buffer_n[index % 10000]);
@@ -111,6 +147,12 @@ char* pwd_from_index(int index) {
     return improved_pwd;
 }
 
+/**
+ * @brief Give an index from a hash.
+ * 
+ * @param hash_to_reduce hash to reduce
+ * @return int index
+ */
 int hash_to_index(char *hash_to_reduce) {
     int hashcode = 0;
     for (int i = 0; i < strlen(hash_to_reduce); i++) {
@@ -119,16 +161,34 @@ int hash_to_index(char *hash_to_reduce) {
     return abs(hashcode);
 }
 
+/**
+ * @brief Gives a plain password from an index.
+ * 
+ * @param index the index
+ * @return char* password respecting the pattern
+ */
 char* index_to_plain(int index) {
     int new_index = index % 255360000;
     return pwd_from_index(new_index);
 }
 
+/**
+ * @brief Reduce an hash to a new password.
+ * 
+ * @param hash_to_reduce hash to reduce
+ * @return char* new password
+ */
 char* improved_pwd_reduction(char *hash_to_reduce) {
     int index = hash_to_index(hash_to_reduce);
     return index_to_plain(index);
 }
 
+/**
+ * @brief Split a line of the table into a head-tail couple.
+ * 
+ * @param current_couple couple to fill
+ * @param the_current_line line of the table
+ */
 void split_and_fill_improved_buffer(pwd_couple *current_couple, char *the_current_line) {
     const char *separator = " ";
     char *str_token_head = strtok(the_current_line, separator);
@@ -140,6 +200,10 @@ void split_and_fill_improved_buffer(pwd_couple *current_couple, char *the_curren
     current_couple->tail_pwd[strlen(current_couple->tail_pwd)] = '\0';
 }
 
+/**
+ * @brief Fill the buffer in with heads and tails of the improved rainbow table.
+ * 
+ */
 void fill_improved_buffer() {
     if (improved_pwd_file == NULL) {
         printf("Error while opening the file.");
@@ -160,12 +224,20 @@ void fill_improved_buffer() {
     fclose(improved_pwd_file);
 }
 
+/**
+ * @brief Put the improved rainbow table in a buffer.
+ * 
+ */
 void improved_buffer_of_pwd_initialization() {
     improved_pwd_file = fopen("../../Files/RainbowTables/WNSRainbowTable.txt", "r");
     improved_buffer_of_pwd = (pwd_couple*) malloc(sizeof(pwd_couple) * IMPROVED_NBR_PASSWORD);
     fill_improved_buffer();
 }
 
+/**
+ * @brief Free the buffer containing the improved raibow table's heads and tails.
+ * 
+ */
 void free_the_improved_buffer() {
     for (int i = 0; i < IMPROVED_NBR_PASSWORD; i++) {
         free_struct(&improved_buffer_of_pwd[i]);
@@ -173,6 +245,14 @@ void free_the_improved_buffer() {
     free(improved_buffer_of_pwd);
 }
 
+/**
+ * @brief Binary search of the reduced hash in the tails of the table.
+ * 
+ * @param first first index
+ * @param last last index
+ * @param to_search reduced password to search
+ * @return int -1 if not found or the right index when found
+ */
 int binary_search(int first, int last, char *to_search) {
     if (last >= first) {
         int middle = (first + last) / 2;
@@ -187,6 +267,10 @@ int binary_search(int first, int last, char *to_search) {
     return -1;
 }
 
+/**
+ * @brief Free the buffer that contains the hash to crack.
+ * 
+ */
 void free_the_buffer_of_hash() {
     for (int i = 0; i < BUFFER_HASH_SIZE; i++) {
         free(buffer_of_hash[i]);
@@ -194,6 +278,10 @@ void free_the_buffer_of_hash() {
     free(buffer_of_hash);
 }
 
+/**
+ * @brief Fill the buffer with hash to crack from the file.
+ * 
+ */
 void fill_the_buffer_of_hash() {
     buffer_of_hash = malloc(sizeof(char*) * BUFFER_HASH_SIZE);
     FILE *file = fopen("Files/HashFiles/HashToCrackFileForImpPwd.txt", "r");
@@ -210,6 +298,10 @@ void fill_the_buffer_of_hash() {
     fclose(file);
 }
 
+/**
+ * @brief Fill a file in with hash of password respcting the pattern to crack.
+ * 
+ */
 void fill_hash_to_crack_file() {
     initialize_buffers();
     FILE *hash_file_to_crack = fopen("Files/HashFiles/HashToCrackFileForImpPwd.txt", "w");

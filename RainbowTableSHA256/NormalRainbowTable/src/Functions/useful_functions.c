@@ -6,6 +6,12 @@
 
 FILE *pwd_file;
 
+/**
+ * @brief Genrate random password.
+ * 
+ * @param length size of password
+ * @return char* password generated
+ */
 char* pwd_generation(int length) {
     static const char pwd_policy[] = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890";
     char *pwd = (char*) malloc(sizeof(char) * (length + 1));
@@ -16,6 +22,14 @@ char* pwd_generation(int length) {
     return pwd;
 }
 
+/**
+ * @brief Reduct an hash to password
+ * 
+ * @param hash_to_reduce hash to reduce
+ * @param step step of the chain we are in
+ * @param pwd_length size of the password
+ * @return char* password generated, reduced hash
+ */
 char* pwd_reduction(char* hash_to_reduce, int step, int pwd_length) {
     static const char pwd_policy[] = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN1234567890";
     char *pwd_reduced = (char*) malloc(sizeof(char) * (pwd_length + 1));
@@ -26,6 +40,11 @@ char* pwd_reduction(char* hash_to_reduce, int step, int pwd_length) {
     return pwd_reduced;
 }
 
+/**
+ * @brief Fill the file of the hash to crack in.
+ * 
+ * @param pwd_length size of the password
+ */
 void fill_hash_to_crack_file(int pwd_length) {
     char fileName[50];
     sprintf(fileName, "Files/HashFiles/HashToCrackFile%d.txt", pwd_length);
@@ -46,6 +65,14 @@ void fill_hash_to_crack_file(int pwd_length) {
     fclose(hash_file_to_crack);
 }
 
+/**
+ * @brief Binary search of the reduced hash in the tails of the table.
+ * 
+ * @param first first index
+ * @param last last index
+ * @param to_search reduced password to search
+ * @return int -1 if not found or the right index when found
+ */
 int binary_search(int first, int last, char *to_search) {
     if (last >= first) {
         int middle = (first + last) / 2;
@@ -60,6 +87,13 @@ int binary_search(int first, int last, char *to_search) {
     return -1;
 }
 
+/**
+ * @brief Split a line of the table into a head-tail couple.
+ * 
+ * @param current_couple couple to fill
+ * @param the_current_line line of the table
+ * @param pwd_length size of the password
+ */
 void split_and_fill_struct(pwd_couple* current_couple, char the_line_of_pwd[], int pwd_length) {
     the_line_of_pwd[strlen(the_line_of_pwd)] = '\0';
     const char *separator = " ";
@@ -71,6 +105,11 @@ void split_and_fill_struct(pwd_couple* current_couple, char the_line_of_pwd[], i
     current_couple->tail_pwd[pwd_length] = '\0';
 }
 
+/**
+ * @brief Fill the buffer that contains the couples head-tail of the table in.
+ * 
+ * @param pwd_length size of the password
+ */
 void fill_buffer_of_couple(int pwd_length) {
     if (pwd_file == NULL) {
         printf("Error while opening the file.");
@@ -93,6 +132,10 @@ void fill_buffer_of_couple(int pwd_length) {
     fclose(pwd_file);
 }
 
+/**
+ * @brief Free the buffer that contains the couples head-tail of the table.
+ * 
+ */
 void free_the_buffer_of_couple() {
     for (int i = 0; i < NUMBER_PASSWORD; i++) {
         free_struct(&buffer_of_couple[i]);
@@ -100,6 +143,11 @@ void free_the_buffer_of_couple() {
     free(buffer_of_couple);
 }
 
+/**
+ * @brief Create the buffer that contains the couples head-tail of the table.
+ * 
+ * @param pwd_length size of the password
+ */
 void buffer_of_couple_initialization(int pwd_length) {
     char fileName[50];
     printf("where are youuuuuuu\n");
@@ -110,6 +158,10 @@ void buffer_of_couple_initialization(int pwd_length) {
     fill_buffer_of_couple(pwd_length);
 }
 
+/**
+ * @brief Free the buffer that contains the hash to crack.
+ * 
+ */
 void free_the_buffer_of_hash() {
     for (int i = 0; i < BUFFER_HASH_SIZE; i++) {
         free(buffer_of_hash[i]);
@@ -117,6 +169,11 @@ void free_the_buffer_of_hash() {
     free(buffer_of_hash);
 }
 
+/**
+ * @brief Fill the buffer with hash to crack from the file.
+ * 
+ * @param pwd_length size of the password
+ */
 void fill_the_buffer_of_hash(int pwd_length) {
     char fileName[50];
     sprintf(fileName, "Files/HashFiles/HashToCrackFile%d.txt", pwd_length);

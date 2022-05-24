@@ -15,6 +15,12 @@ FILE *pwd_storage_file;
 pthread_mutex_t fileMutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t randMutex = PTHREAD_MUTEX_INITIALIZER;
 
+/**
+ * @brief Generate a chain, get the tail of a chain.
+ * 
+ * @param improved_head_pwd initial password
+ * @return int index corresponding to the tail
+ */
 int tail_computation(char *improved_head_pwd) {
     char *pwd_hashed = malloc(sizeof(char) * 65);
     char *hash_reduced = malloc(sizeof(char) * (strlen(improved_head_pwd) + 1));
@@ -37,6 +43,13 @@ int tail_computation(char *improved_head_pwd) {
     return tail_pwd_index;
 }
 
+/**
+ * @brief Check if a tail already exists in the table.
+ * 
+ * @param tail_to_check tail to check
+ * @param max_index maximum index to search to
+ * @return int 1 if the tail already exists, 0 otherwise
+ */
 int check_if_already_there(char *tail_to_check, int max_index) {
     if (max_index == 0) {
         return 0;
@@ -50,6 +63,11 @@ int check_if_already_there(char *tail_to_check, int max_index) {
     }
 }
 
+/**
+ * @brief Generate chains for the table.
+ * 
+ * @return void* 
+ */
 void* chain_generation() {
     while (pwd_generated < pwd_to_generate) {
         improved_pwd_couple_int improved_couple;
@@ -74,6 +92,10 @@ void* chain_generation() {
     pthread_exit(NULL);
 }
 
+/**
+ * @brief Launch several threads to generate the table.
+ * 
+ */
 void thread_launching(void) {
     pthread_t thread[NTHREADS];
     for (int i = 0; i < NTHREADS; i++) {
@@ -85,6 +107,12 @@ void thread_launching(void) {
     }
 }
 
+/**
+ * @brief Create an improved rainbow table.
+ * 
+ * @param passwd_to_generate number of lines in the table
+ * @param chain_size size of the chains
+ */
 void start_rainbow_table_creation(int passwd_to_generate, int chain_size) {
     srand(1);
     initialize_buffers();

@@ -14,6 +14,10 @@ int hash_failed = 0;
 
 pthread_mutex_t improvedResultFileMutex = PTHREAD_MUTEX_INITIALIZER;
 
+/**
+ * @brief Display feedback of the cracking.
+ * 
+ */
 void print_the_summary() {
     fprintf(improved_result_file, "\nSummary :\n");
     fprintf(improved_result_file, "     - Hash cracked -> %d\n", hash_cracked);
@@ -21,6 +25,13 @@ void print_the_summary() {
     fprintf(improved_result_file, "     - Accuracy     -> %f%c\n", ((float) hash_cracked / (float) BUFFER_HASH_SIZE) * 100, '%');
 }
 
+/**
+ * @brief Rebuild a chain to get the password.
+ * 
+ * @param head_pwd initial password of the chain
+ * @param chain_construction_size size of the chain to find the password
+ * @return char* the password
+ */
 char *rebuild_chain(char *head_pwd, int chain_construction_size) {
     char *pwd_hashed = malloc(sizeof(char) * 41);
     char *hash_reduced = malloc(strlen(head_pwd) + 1);
@@ -40,6 +51,14 @@ char *rebuild_chain(char *head_pwd, int chain_construction_size) {
     return hash_reduced;
 }
 
+/**
+ * @brief Check wether a password is in the tails of the table.
+ * 
+ * @param hash_to_crack hash to crack
+ * @param reduced_pwd password to search
+ * @param step_counter current step of the chain
+ * @return int 1 if the password is found, 0 otherwise
+ */
 int check_if_found(char *hash_to_crack, char *reduced_pwd, int step_counter) {
     int binary_search_result = binary_search(0, IMPROVED_NBR_PASSWORD - 1, reduced_pwd);
     if (binary_search_result != -1) {
@@ -66,6 +85,11 @@ int check_if_found(char *hash_to_crack, char *reduced_pwd, int step_counter) {
     }
 }
 
+/**
+ * @brief Try to crack an hash.
+ * 
+ * @param hash_to_crack hash to crack
+ */
 void rainbow_cracking(char *hash_to_crack) {
     int reduction_result_int = hash_to_index(hash_to_crack);
     char *reduction_result = pwd_from_index(reduction_result_int);
@@ -115,6 +139,12 @@ void rainbow_cracking(char *hash_to_crack) {
     pthread_mutex_unlock(&improvedResultFileMutex);
 }
 
+/**
+ * @brief Start cracking an hash.
+ * 
+ * @param hash_to_crack hash to crack
+ * @param chain_size size of the chain of the table
+ */
 void start_cracking(char *hash_to_crack, int chain_size) {
     initialize_buffers();
     improved_buffer_of_pwd_initialization();
@@ -127,6 +157,12 @@ void start_cracking(char *hash_to_crack, int chain_size) {
     fclose(improved_result_file);
 }
 
+/**
+ * @brief Dispatch the hash between the threads.
+ * 
+ * @param index index of the thread
+ * @return void* 
+ */
 void* thread_dispaching(void * index) {
     for (int i = *(int*) index; i < BUFFER_HASH_SIZE; i = i + NTHREADS_CRACK) {
         rainbow_cracking(buffer_of_hash[i]);
@@ -135,6 +171,11 @@ void* thread_dispaching(void * index) {
     return 0;
 }
 
+/**
+ * @brief Try to crack a set of hash with an improved rainbow table.
+ * 
+ * @param chain_size size of the chains of the rainbow table
+ */
 void mass_cracking(int chain_size) {
     initialize_buffers();
     improved_buffer_of_pwd_initialization();
